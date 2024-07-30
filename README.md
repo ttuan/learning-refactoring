@@ -14,10 +14,9 @@
 
 
 ## Recommended Books
-- [Refactoring Ruby](https://www.amazon.com/Refactoring-Ruby-Addison-Wesley-Professional/dp/0321984137) - Martin Flower, Jay Fields
-- [Ruby Science](https://github.com/thoughtbot/ruby-science) - Thoughtbot
-- [Practical Object Oriented Design in Ruby](https://www.poodr.com/) - Sandi Metz
-
+- [Refactoring Ruby](https://www.amazon.com/Refactoring-Ruby-Addison-Wesley-Professional/dp/0321984137) - Martin Flower, Jay Fields - This book shows you the right way to refactoring
+- [Ruby Science](https://github.com/thoughtbot/ruby-science) - Thoughtbot - Code Smells/ Solutions and Principles to write a clean code
+- [Practical Object Oriented Design in Ruby](https://www.poodr.com/) - Sandi Metz - How to 'think' OO
 
 ## Refactoring Kata
 
