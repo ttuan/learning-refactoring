@@ -1,33 +1,22 @@
-class OrderReport
-  attr_reader :orders, :date_range
+require 'date'
+require 'ostruct'
 
-  def initialize(orders, date_range)
+class OrdersReport
+  def initialize(orders, start_date, end_date)
     @orders = orders
-    @date_range = date_range
+    @start_date = start_date
+    @end_date = end_date
   end
 
   def total_sales_within_date_range
-    orders_with_range.sum(&:amount)
-  end
+    orders_within_range =
+      @orders.select { |order| order.placed_at >= @start_date &&
+                               order.placed_at <= @end_date }
 
-  private
-
-  def orders_with_range
-    orders.select { |order| date_range.include?(order.placed_at) }
-  end
-end
-
-class DateRange < Struct.new(:start_date, :end_date)
-  def include?(date)
-    (start_date..end_date).cover?(date)
+    orders_within_range.
+      map(&:amount).inject(0) { |sum, amount| amount + sum }
   end
 end
 
-class Order
-  attr_reader :placed_at, :amount
-
-  def initialize(placed_at: , amount:)
-    @placed_at = placed_at
-    @amount = amount
-  end
+class Order < OpenStruct
 end
